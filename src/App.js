@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import Header from './Components/Header';
+import Search from './Components/Search';
+import Categories from './Components/Categories';
+import Carousel from './Components/Carousel';
+import CarouselItem from './Components/CarouselItem';
+import Footer from './Components/Footer';
+
+import './assets/styles/App.css';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Search />
+      {/* {videos.mylist.length > 0 && */}
+        <Categories>
+          <Carousel>
+            <CarouselItem />
+          </Carousel>
+        </Categories>
+      {/* } */}
+      <Categories>
+        <Carousel>
+          {/* {videos.trends.map(item => */}
+            <CarouselItem />
+          {/* )} */}
+        </Carousel>
+      </Categories>
+      <Footer />
     </div>
   );
 }
